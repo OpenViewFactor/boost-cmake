@@ -3,8 +3,8 @@ project(Boost-CMake)
 
 option(BOOST_DISABLE_TESTS "Do not build test targets, even if building standalone" OFF)
 
-set(BOOST_URL "https://boostorg.jfrog.io/artifactory/main/release/1.71.0/source/boost_1_71_0.tar.bz2" CACHE STRING "Boost download URL")
-set(BOOST_URL_SHA256 "d73a8da01e8bf8c7eda40b4c84915071a8c8a0df4a6734537ddde4a8580524ee" CACHE STRING "Boost download URL SHA256 checksum")
+set(BOOST_URL "https://archives.boost.io/release/1.87.0/source/boost_1_87_0.tar.bz2" CACHE STRING "Boost download URL")
+set(BOOST_URL_SHA256 "af57be25cb4c4f4b413ed692fe378affb4352ea50fbe294a11ef548f4d527d89" CACHE STRING "Boost download URL SHA256 checksum")
 
 include(FetchContent)
 FetchContent_Declare(
@@ -44,34 +44,7 @@ set(BOOST_LIBS_REQUIRED
   header
 )
 set(BOOST_LIBS_OPTIONAL
-  # Compiled libs
-  atomic
-  chrono
-  container
-  context
-  coroutine
-  date_time
-  exception
-  fiber
-  filesystem
-  graph
-  iostreams
-  locale
-  log
-  math
-  mpi
-  graph_parallel # depends on mpi, so needs to be put after it
   program_options
-  #python # complex module
-  random
-  regex
-  serialization
-  system
-  test
-  thread
-  timer
-  type_erasure
-  wave
   CACHE STRING "Boost libs to be compiled"
 )
 
